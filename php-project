@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+ cp -r ./* /var/www/myphp/
+
+echo "PHP Deployment Successfully Done"
