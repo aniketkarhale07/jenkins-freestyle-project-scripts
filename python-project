@@ -1,0 +1,61 @@
+#!/bin/bash
+ set -e
+ 
+   APP_DIR="/app/flask-project"
+   
+   echo "starting Flask Deployment"
+   
+   cp app.py requirements.txt "$APP_DIR/"
+   cp -r * /app/flask-project/
+   
+   cd "$APP_DIR"
+   
+    ./venv/bin/pip install -r requirements.txt
+   
+  sudo systemctl restart flask-app.service
+
+sudo systemctl is-active --quiet flask-app.service
+   
+    echo "FLASK DEPLOYMENT SUCCESS"
+
+------------------------------------------------------------------------------------------------------
+    CAMMAND HISTORY
+sudo mkdir -p /app/flask-project
+  694  ls -ld /app/flask-project
+  695  chown -R jenkins:jenkins /app/flask-project
+  696  ls -ld /app/flask-project
+  697  cd /var/lib/jenkins/workspace/python-project
+  698  clear
+  699  cd /var/lib/jenkins/workspace/python-project
+  700  ls -la
+  701  cat /var/lib/jenkins/workspace/python-project/requirements.txt
+  702  pip3 install -r requirements.txt
+  703  grep -Rni "requirement.txt" /var/lib/jenkins/jobs/python-project/config.xml
+  704  ls -l /app/flask-project/venv/bin/pip
+  705  cd /app/flask-project
+  706  python3 -m venv venv
+  707  ls -l /app/flask-project/venv/bin/pip
+  708  cd /app/flask-project
+  709  ./venv/bin/pip install -r requirements.txt
+  710  cp /var/lib/jenkins/workspace/python-project/app.py /app/flask-project/
+  711  cp /var/lib/jenkins/workspace/python-project/requirements.txt /app/flask-project/
+  712  cp -f /var/lib/jenkins/workspace/python-project/app.py /app/flask-project/
+  713  cp -f /var/lib/jenkins/workspace/python-project/requirements.txt /app/flask-project/
+  714  ls -la /app/flask-project/
+  715  cd /app/flask-project
+  716  ./venv/bin/pip install -r requirements.txt
+  717  ./venv/bin/pip show flask
+  718  clear
+  719  sudo systemctl status flask-app.service
+  720  systemctl status flask-app.service
+  721  sudo systemctl restart flask-app.service
+  722  sudo vi /etc/systemd/system/flask-app.service
+  723  sudo systemctl daemon-reload
+  724  sudo systemctl enable flask-app.service
+  725  sudo systemctl start flask-app.service
+  726  sudo systemctl status flask-app.service
+  727  sudo chown -R jenkins:jenkins /app/flask-project
+  728  sudo chmod -R 755 /app/flask-project
+  729  ls -ld /app/flask-project
+  730  ls -l /app/flask-project
+  731  getenforce
