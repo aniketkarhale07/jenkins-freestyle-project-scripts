@@ -1,0 +1,3 @@
+npm install
+pm2 restart node1 || pm2 start index.js --name node1
+pm2 save
